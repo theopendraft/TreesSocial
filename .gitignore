@@ -1,0 +1,27 @@
+﻿# root
+.env
+.env.local
+*.log
+.DS_Store
+
+# Keep environment templates and production configs
+!.env.example
+!.env.production
+
+# node
+node_modules/
+dist/
+build/
+
+# backend
+backend/.env
+backend/node_modules/
+backend/uploads/
+backend/seed-output/
+
+# frontend
+Treeswebfrontend-main/node_modules/
+Treeswebfrontend-main/dist/
+
+# misc
+*.zip
