@@ -207,7 +207,7 @@ export const ReelsViewer = () => {
       if (!ok) {
         // Fallback to reels specific endpoint
         const base =
-          import.meta.env.VITE_API_BASE_URL || "https://api.inventurcubes.com/api";
+          (import.meta.env.VITE_API_BASE_URL || "/api").replace(/\/+$/, "");
         const resp = await fetch(`${base}/reels/${id}/save`, {
           method: "POST",
           headers: {

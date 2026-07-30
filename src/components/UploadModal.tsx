@@ -66,7 +66,7 @@ const SUPPORTED_TYPES = {
   ],
 };
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://api.inventurcubes.com/api";
+const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || "/api").replace(/\/+$/, "");
 
 export const UploadModal = ({ isOpen, onClose, type }: UploadModalProps) => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);

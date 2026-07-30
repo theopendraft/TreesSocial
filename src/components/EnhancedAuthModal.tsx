@@ -179,8 +179,9 @@ export const EnhancedAuthModal = ({
       const type = registerData.email ? "email" : "sms";
 
       // Call backend API to send OTP
+      const baseUrl = (import.meta.env.VITE_API_BASE_URL || "/api").replace(/\/+$/, "");
       const response = await fetch(
-        `${import.meta.env.VITE_API_BASE_URL || "https://api.inventurcubes.com/api"}/auth/send-otp`,
+        `${baseUrl}/auth/send-otp`,
         {
           method: "POST",
           headers: {
@@ -360,8 +361,9 @@ export const EnhancedAuthModal = ({
     try {
       // Step 1: Verify OTP first
       const identifier = registerData.email || registerData.mobileNumber;
+      const baseUrl = (import.meta.env.VITE_API_BASE_URL || "/api").replace(/\/+$/, "");
       const otpVerifyResponse = await fetch(
-        `${import.meta.env.VITE_API_BASE_URL || "https://api.inventurcubes.com/api"}/auth/verify-otp`,
+        `${baseUrl}/auth/verify-otp`,
         {
           method: "POST",
           headers: {

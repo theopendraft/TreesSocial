@@ -2,7 +2,7 @@ import { toast } from "@/hooks/use-toast";
 
 // API Configuration
 const API_BASE_URL =
-  (import.meta.env.VITE_API_BASE_URL || "https://api.inventurcubes.com/api").replace(/\/$/, "");
+  (import.meta.env.VITE_API_BASE_URL || "/api").replace(/\/+$/, "");
 
 // Types
 export interface ApiResponse<T = any> {
