@@ -29,16 +29,22 @@ export interface RegisterData {
 
 export interface UserProfile {
   id: string;
+  _id?: string;
   username: string;
   email: string;
   fullName: string;
   avatar?: string;
+  coverImage?: string;
   bio?: string;
   location?: string;
   website?: string;
-  isStreamer: boolean;
+  isStreamer?: boolean;
   followingCount?: number;
   followerCount?: number;
+  followersCount?: number;
+  postsCount?: number;
+  isVerified?: boolean;
+  role?: string;
   streamerProfile?: {
     category: string;
     totalViews: number;

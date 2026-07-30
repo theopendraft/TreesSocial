@@ -24,6 +24,7 @@ import {
   ArrowLeft,
   CheckCircle,
   Shield,
+  Sparkles,
 } from "lucide-react";
 
 interface EnhancedAuthModalProps {
@@ -531,6 +532,37 @@ export const EnhancedAuthModal = ({
           </TabsList>
 
           <TabsContent value="login" className="space-y-4 mt-6">
+            {/* Demo Credentials Info Box */}
+            <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl p-4 text-emerald-950 shadow-xs">
+              <div className="flex items-center gap-2 mb-2 font-semibold text-emerald-800 text-sm">
+                <Sparkles className="w-4 h-4 text-emerald-600 animate-pulse" />
+                <span>Demo Login Credentials</span>
+              </div>
+              <div className="space-y-1.5 text-xs text-emerald-900 bg-white/80 p-3 rounded-lg border border-emerald-100/80 font-mono">
+                <p><strong className="text-emerald-700 font-sans">Email / Username:</strong> demo@treessocial.com or demouser <span className="text-gray-500 font-sans">(or any string)</span></p>
+                <p><strong className="text-emerald-700 font-sans">Password:</strong> password123 <span className="text-gray-500 font-sans">(or any string)</span></p>
+              </div>
+              <div className="mt-3 flex gap-2">
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  className="w-full bg-white hover:bg-emerald-100 text-emerald-800 border-emerald-300 font-medium text-xs h-8"
+                  onClick={() => setLoginData({ identifier: "demo@treessocial.com", password: "password123" })}
+                >
+                  Autofill Demo Info
+                </Button>
+                <Button
+                  type="button"
+                  size="sm"
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-xs h-8"
+                  onClick={handleDemoLogin}
+                >
+                  Instant Demo Login ⚡
+                </Button>
+              </div>
+            </div>
+
             <form onSubmit={handleLogin} className="space-y-4">
               <div className="space-y-2">
                 <Label
